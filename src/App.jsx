@@ -1,5 +1,3 @@
-// import {useEffect, useState} from "react"
-// import Button from "./component/Button/Button";
 import { useState } from "react";
 import Form from "./component/Form/Form";
 import ProducList from "./component/ProductList/ProductList";
@@ -9,12 +7,18 @@ const App = () => {
 
   const addProduct = (item) => {
     setProducts([...products, item]);
+    console.log(item);
   };
 
+  const deleteItem = (index) => {
+    setProducts((preProducts) => {
+      return preProducts.filter((products, index) => index !== index);
+    });
+  };
   return (
     <div>
       <Form addProduct={addProduct} />
-      <ProducList products={products} />
+      <ProducList products={products} deleteItem={deleteItem} />
     </div>
   );
 };

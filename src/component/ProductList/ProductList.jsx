@@ -7,7 +7,7 @@ const ProductList = ({ products }) => {
       {products.map((product, index) => {
         return (
           <li key={index}>
-            <Product product={product} />
+            <Product product={product} index={index} />
           </li>
         );
       })}
