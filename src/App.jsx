@@ -1,44 +1,22 @@
-import {useEffect, useState} from "react"
-import Button from "./component/Button/Button";
+// import {useEffect, useState} from "react"
+// import Button from "./component/Button/Button";
+import { useState } from "react";
+import Form from "./component/Form/Form";
+import ProducList from "./component/ProductList/ProductList";
 
 const App = () => {
-  const [clickCounter , setClickCounter] = useState(0)
-  const [totalclickCounter , setTotalClickCounter] = useState(() => {
-    const value =  localStorage.getItem('totalclickCounter')
-    return +value
-  })
-  
+  const [products, setProducts] = useState([]);
 
-  useEffect(() => {
-    localStorage.setItem('totalclickCounter' , totalclickCounter)
-  } ,[totalclickCounter])
-
-  const totalCounter = () => {
-    setTotalClickCounter ( totalclickCounter + 1)
-  }
-
-  const increment = () => {
-    setClickCounter(clickCounter +1 )
-    totalCounter()
-    
-  }
-  const decrement = () => {
-    setClickCounter(clickCounter -1 )
-    totalCounter()
-    
-  }
-
+  const addProduct = (item) => {
+    setProducts([...products, item]);
+  };
 
   return (
     <div>
-      
-      <Button handleClick = {increment}>Button1</Button >
-      <h2>{clickCounter}</h2>
-      <h2>{totalclickCounter}</h2>
-      <Button handleClick = {decrement}>Button2</Button>
-      
+      <Form addProduct={addProduct} />
+      <ProducList products={products} />
     </div>
-  )
+  );
 };
 
 export default App;
