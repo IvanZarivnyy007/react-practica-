@@ -12,9 +12,10 @@ const App = () => {
 
   const deleteItem = (index) => {
     setProducts((preProducts) => {
-      return preProducts.filter((products, index) => index !== index);
+      return preProducts.filter((products, i) => i !== index);
     });
   };
+
   return (
     <div>
       <Form addProduct={addProduct} />
