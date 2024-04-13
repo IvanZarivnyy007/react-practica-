@@ -1,25 +1,35 @@
 import { useState } from "react";
-import Form from "./component/Form/Form";
-import ProducList from "./component/ProductList/ProductList";
+
+import Form from "./components/Form/Form";
+import BookList from "./components/BookList/BookList";
+import { useEffect } from "react";
 
 const App = () => {
-  const [products, setProducts] = useState([]);
+  const [books, setBooks] = useState(() => {
+    const data = localStorage.getItem("books");
+    const result = JSON.parse(data);
+    return result || [];
+  });
 
-  const addProduct = (item) => {
-    setProducts([...products, item]);
-    console.log(item);
+  useEffect(() => {
+    localStorage.setItem("books", JSON.stringify(books));
+  }, [books]);
+
+  const addBooks = (newBooks) => {
+    setBooks([...books, newBooks]);
   };
 
-  const deleteItem = (index) => {
-    setProducts((preProducts) => {
-      return preProducts.filter((products, i) => i !== index);
+  const delleteBook = (id) => {
+    const copy = books.filter((book) => {
+      return book.id !== id;
     });
+    setBooks(copy);
   };
 
   return (
     <div>
-      <Form addProduct={addProduct} />
-      <ProducList products={products} deleteItem={deleteItem} />
+      <Form addBooks={addBooks} />
+      <BookList books={books} delleteBook={delleteBook} />
     </div>
   );
 };
