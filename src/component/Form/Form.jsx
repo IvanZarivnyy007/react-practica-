@@ -13,6 +13,7 @@ const Form = ({ addProduct }) => {
 
       id: nanoid(),
     };
+    event.target.reset();
     addProduct(x);
   };
   return (

@@ -1,0 +1,55 @@
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 300px; /* Ширина форми */
+  margin: 0 auto; /* Центрування форми на сторінці */
+}
+
+input[type="text"],
+input[type="number"] {
+  margin-bottom: 10px; /* Відступ між полями */
+  padding: 8px; /* Внутрішній відступ для кращого вигляду */
+  border-radius: 5px; /* Округлені кути */
+  border: 1px solid #ccc; /* Обведення полів */
+}
+
+button[type="submit"] {
+  background-color: #007bff; /* Колір кнопки */
+  color: #fff; /* Колір тексту на кнопці */
+  border: none; /* Видалення рамки */
+  padding: 10px 15px; /* Внутрішній відступ для кращого вигляду */
+  border-radius: 5px; /* Округлені кути */
+  cursor: pointer; /* Зміна курсора при наведенні */
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3; /* Зміна коліру кнопки при наведенні */
+}
+
+.product-container {
+  background-color: #f9f9f9; /* Колір фону для контейнера товару */
+  padding: 10px; /* Внутрішній відступ */
+  margin-bottom: 10px; /* Зовнішній відступ знизу */
+  border-radius: 5px; /* Округлені кути */
+}
+
+.product-title,
+.product-price,
+.product-author,
+.product-desc,
+.product-amount {
+  margin: 5px 0; /* Відступи між елементами */
+}
+
+.delete-button {
+  background-color: #dc3545; /* Колір кнопки видалення */
+  color: #fff; /* Колір тексту на кнопці */
+  border: none; /* Видалення рамки */
+  padding: 5px 10px; /* Внутрішній відступ для кращого вигляду */
+  border-radius: 5px; /* Округлені кути */
+  cursor: pointer; /* Зміна курсора при наведенні */
+}
+
+.delete-button:hover {
+  background-color: #c82333; /* Зміна коліру кнопки при наведенні */
+}

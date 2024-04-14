@@ -5,13 +5,13 @@ import ProducList from "./component/ProductList/ProductList";
 const App = () => {
   const [products, setProducts] = useState(() => {
     const res = localStorage.getItem("products");
-    const data = res.JSON.parse(products) || [];
-    setProducts(data);
+    const data = JSON.parse(res) || [];
+    return data;
   });
 
   useEffect(() => {
     localStorage.setItem("products", JSON.stringify(products));
-  });
+  }, [products]);
 
   const addProduct = (item) => {
     setProducts([...products, item]);
