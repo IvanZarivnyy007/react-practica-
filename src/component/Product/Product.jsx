@@ -8,9 +8,7 @@ const Product = ({ product, deleteItem }) => {
       <p>{product.author}</p>
       <p>{product.desc}</p>
       <p>{product.amount}</p>
-      <button onClick={() => deleteItem(product.index)} type="button">
-        Dellete
-      </button>
+      <button onClick={() => deleteItem(product.id)}>Dellete</button>
     </div>
   );
 };

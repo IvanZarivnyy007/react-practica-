@@ -10,9 +10,10 @@ const Form = ({ addProduct }) => {
       amount: event.target.elements.amount.value,
       desc: event.target.elements.desc.value,
       author: event.target.elements.author.value,
+
+      id: nanoid(),
     };
     addProduct(x);
-    id: nanoid();
   };
   return (
     <form onSubmit={handleSubmit}>

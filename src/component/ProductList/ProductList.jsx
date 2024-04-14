@@ -1,13 +1,13 @@
 // import { useState } from "react";
 import Product from "../Product/Product";
 
-const ProductList = ({ products }) => {
+const ProductList = ({ products, deleteItem }) => {
   return (
     <ul>
       {products.map((product) => {
         return (
-          <li key={id}>
-            <Product product={product} />
+          <li key={product.id}>
+            <Product product={product} deleteItem={deleteItem} />
           </li>
         );
       })}
