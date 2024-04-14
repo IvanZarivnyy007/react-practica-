@@ -4,8 +4,8 @@ import ProducList from "./component/ProductList/ProductList";
 
 const App = () => {
   const [products, setProducts] = useState(() => {
-    const local = localStorage.getItem("products", JSON.stringify(products));
-    const data = local.JSON.parse(products);
+    const res = localStorage.getItem("products");
+    const data = res.JSON.parse(products) || [];
     setProducts(data);
   });
 
