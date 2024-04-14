@@ -3,10 +3,14 @@ import Form from "./component/Form/Form";
 import ProducList from "./component/ProductList/ProductList";
 
 const App = () => {
-  const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState(() => {
+    const local = localStorage.getItem("products", JSON.stringify(products));
+    const data = local.JSON.parse(products);
+    setProducts(data);
+  });
 
   useEffect(() => {
-    localStorage.setItem("products", products);
+    localStorage.setItem("products", JSON.stringify(products));
   });
 
   const addProduct = (item) => {
