@@ -1,4 +1,5 @@
 // import {useState} from "react"
+import { nanoid } from "nanoid";
 
 const Form = ({ addProduct }) => {
   const handleSubmit = (event) => {
@@ -11,7 +12,7 @@ const Form = ({ addProduct }) => {
       author: event.target.elements.author.value,
     };
     addProduct(x);
-    id = nanoid();
+    id: nanoid();
   };
   return (
     <form onSubmit={handleSubmit}>

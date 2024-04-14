@@ -1,6 +1,5 @@
 // import { useState } from "react";
 import Product from "../Product/Product";
-import { nanoid } from "nanoid";
 
 const ProductList = ({ products }) => {
   return (
